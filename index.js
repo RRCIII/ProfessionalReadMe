@@ -4,6 +4,10 @@
 const questions = [];
 
 // TODO: Create a function to write README file
+fs.writeToFile('ReadMe.md', constent , (err) => {
+    err ? console.error(err) : console.log(data)
+});
+
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
