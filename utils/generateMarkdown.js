@@ -1,11 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const license = "MIT";
-
+let license = "MIT"
 function renderLicenseBadge(license) {  
       const licenseBadges = {
-        'MIT': '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-        'Apache-2.0': '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',   
+        'MIT': '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',  
       }
       return licenseBadges[license] || '';
     
@@ -16,8 +14,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
       const licenseLinks = {
-        'MIT': 'https://opensource.org/licenses/MIT',
-        'Apache-2.0': 'https://opensource.org/licenses/Apache-2.0'
+        'MIT': 'https://opensource.org/licenses/MIT'
       } 
     return licenseLinks[license] || '';
 };
@@ -29,9 +26,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
       const licenseSections = {
         'MIT': `MIT License
-          This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.`,
-        'Apache-2.0': `Apache License 2.0
-          This project is licensed under the Apache License, Version 2.0 - see the [LICENSE](https://opensource.org/licenses/Apache-2.0) page for details.`
+          This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.`
       }
     return licenseSections[license] || '';
 };
