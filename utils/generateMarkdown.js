@@ -36,38 +36,38 @@ console.log(renderLicenseLink(license));
 console.log(renderLicenseSection(license));
 
 // TODO: Create a function to generate markdown for README
-// const data = [
-//   {title: "Title"},
-//   {description: "Description"},
-//   {tableOfContents: "Table of Contents"},
-//   {installation: "Installation"},
-//   {usage: "Usage"},
-//   {credits: "Credits"},
-//   {license: "License"},
-//   {contributing: "Constributing"},
-//   {tests:"Tests"},
-//   {questions: "Questions"}
-// ]
+const data = [
+  {title: "Title"},
+  {description: "Description"},
+  {tableOfContents: "Table of Contents"},
+  {installation: "Installation"},
+  {usage: "Usage"},
+  {credits: "Credits"},
+  {license: "License"},
+  {contributing: "Constributing"},
+  {tests:"Tests"},
+  {questions: "Questions"}
+]
 
-// function generateMarkdown(data) {
-//   for(let prop of data) {
-//     console.log(prop);
-//     return `# ${data[0].title} 
-//             ## ${data[1].description}
-//             ## ${data[2].tableOfContents}
-//             ## ${data[3].installation}
-//             ## ${data[4].usage}
-//             ## ${data[5].credits}
-//             ## ${data[6].license}          
-//             ## ${data[7].constributing}          
-//             ## ${data[8].tests}          
-//             ## ${data[9].questions}          
-//           `;
-//   }
-// };
+function generateMarkdown(data) {
+  for(let prop of data) {
+    console.log(prop);
+    return `# ${data[0].title} 
+            ## ${data[1].description}
+            ## ${data[2].tableOfContents}
+            ## ${data[3].installation}
+            ## ${data[4].usage}
+            ## ${data[5].credits}
+            ## ${data[6].license}          
+            ## ${data[7].constributing}          
+            ## ${data[8].tests}          
+            ## ${data[9].questions}          
+          `;
+  }
+};
 
 // generateMarkdown(...data);
-// module.exports = generateMarkdown;
+module.exports = generateMarkdown;
 
 
 
