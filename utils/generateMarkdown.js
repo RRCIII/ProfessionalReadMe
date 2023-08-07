@@ -11,7 +11,7 @@ function renderLicenseBadge(license) {
     return ''; // If there is no license entered by user 
   }
 };
-//  console.log(renderLicenseBadge(license))
+ console.log(renderLicenseBadge(license))
 
 
 // // TODO: Create a function that returns the license link
@@ -27,7 +27,7 @@ function renderLicenseLink(license) {
     return '';
   } 
 };
-// console.log(renderLicenseLink(license));
+console.log(renderLicenseLink(license));
 
 
 // // TODO: Create a function that returns the license section of README
@@ -44,7 +44,7 @@ ${renderLicenseBadge(license)}
     return '';
   }
 };
-// console.log(renderLicenseSection(license));
+console.log(renderLicenseSection(license));
 
 // TODO: Create a function to generate markdown for README
 const data = [{
