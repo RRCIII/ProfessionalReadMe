@@ -1,5 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// const license = "MIT";
+// const licenseEl = "Apache 2.0";
+// const licenseEl2 = "GNU GPL v3"; 
 
 function renderLicenseBadge(license) {
   if(license === 'MIT') {
@@ -12,7 +15,7 @@ function renderLicenseBadge(license) {
     return ''; // If there is no license entered by user 
   }
 };
-
+ console.log(renderLicenseBadge(license))
 
 
 // TODO: Create a function that returns the license link
@@ -28,7 +31,7 @@ function renderLicenseLink(license) {
     return '';
   } 
 };
-
+console.log(renderLicenseLink(license));
 
 
 // TODO: Create a function that returns the license section of README
@@ -45,9 +48,6 @@ ${renderLicenseBadge(license)}
     return '';
   }
 };
-
-console.log(renderLicenseBadge(license));
-console.log(renderLicenseLink(license));
 console.log(renderLicenseSection(license));
 
 // TODO: Create a function to generate markdown for README
@@ -66,62 +66,69 @@ const data = [
 
 
 function generateMarkdown(data) {
-  let markdown = '';
-    function addSection(sectionTitle) {
-      markdown += `## ${sectionTitle}\n\n`;
-    }
+  return `# ${data.title}
+  
+  ##Description
+  ${data.description}
+  
+  ## Table of Constents
+  - [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    function addSectionWithDescription(sectionTitle, sectionDescription) {
-      markdown += `## ${sectionTitle}\n\n${sectionDescription}\n\n`;
-    }
+## Installation
+${data.installation}
 
-    data.foreach(item  => {
-      const keys = Object.keys(item);
-      const sectionKeys = keys[0];
-      const sectionValue = item[sectionKeys];
+## Usage
+${data.usage}
 
-      switch (sectionKeys) {
-      case "title":
-        markdown += `# ${sectionValue}\n\n`;
-        break;
-      case "description":
-        addSectionWithDescription("Description", sectionValue);
-        break;
-      case "tableOfContents":
-        addSectionWithDescription("Table of Contents", sectionValue);
-        break;
-      case "installation":
-        addSectionWithDescription("Installation", sectionValue);
-        break;
-      case "usage":
-        addSectionWithDescription("Usage", sectionValue);
-        break;
-      case "credits":
-        addSectionWithDescription("Credits", sectionValue);
-        break;
-      case "license":
-        addSectionWithDescription("License", sectionValue);
-        break;
-      case "contributing":
-        addSectionWithDescription("Contributing", sectionValue);
-        break;
-      case "tests":
-        addSectionWithDescription("Tests", sectionValue);
-        break;
-      case "questions":
-        addSectionWithDescription("Questions", sectionValue);
-        break;
-      default:
-          "unrecognizable key";
-        break;
-      }
-    })
-    return markdown; 
+## Credits 
+${data.credits}
+
+## License 
+${data.license}
+
+## Contributing
+${data.contributing}
+
+## Tests
+${data.tests}
+
+## Questions
+${data.questions}
+
+  `;
 };
 
-console.log(generateMarkdown(data));   
 
-module.exports = generateMarkdown;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(generateMarkdown(data));   
+
+// module.exports = generateMarkdown;
 
 
 
