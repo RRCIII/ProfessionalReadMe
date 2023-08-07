@@ -35,14 +35,15 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 
 function renderLicenseSection(license) {
-  const licenseSection = {'MIT': `MIT License 
-    This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.`};
-    if(!licenseSection[license]) {
-      return  '';
-    } else {
-      return licenseSection[license]
-    }
-  
+  if (license) {
+    return `## License 
+This Project is licensed under the ${license} License. Click [here]${renderLicenseLink(license)} to see the full license details.
+
+${renderLicenseBadge(license)}
+`;
+  } else {
+    return '';
+  }
 };
 
 console.log(renderLicenseBadge(license));
