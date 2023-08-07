@@ -1,34 +1,46 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-let license = "MIT"
-function renderLicenseBadge(license) {  
-      const licenseBadges = {
-        'MIT': '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',  
-      }
-      return licenseBadges[license] || '';
-    
+
+function renderLicenseBadge(license) {
+  if(license === 'MIT') {
+    return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
+  } else if (license === 'Apache 2.0') {
+    return '![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)';
+  } else if ( license === 'GNU GPL v3') {
+    return '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)';
+  } else {
+    return '' // return empty string 
+  }
 };
+
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-      const licenseLinks = {
-        'MIT': 'https://opensource.org/licenses/MIT'
-      } 
-    return licenseLinks[license] || '';
+    const licenseLinks = {'MIT': 'https://opensource.org/licenses/MIT'};
+      if(!licenseLinks[license]) {
+        return  '';
+      } else {
+        return licenseLinks[license]
+      }
+    
 };
 
 
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+
 function renderLicenseSection(license) {
-      const licenseSections = {
-        'MIT': `MIT License
-          This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.`
-      }
-    return licenseSections[license] || '';
+  const licenseSection = {'MIT': `MIT License 
+    This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.`};
+    if(!licenseSection[license]) {
+      return  '';
+    } else {
+      return licenseSection[license]
+    }
+  
 };
 
 console.log(renderLicenseBadge(license));
@@ -40,33 +52,72 @@ const data = [
   {title: "Title"},
   {description: "Description"},
   {tableOfContents: "Table of Contents"},
-  {installation: "Installation"},
-  {usage: "Usage"},
-  {credits: "Credits"},
-  {license: "License"},
-  {contributing: "Constributing"},
-  {tests:"Tests"},
-  {questions: "Questions"}
+  {installation: "Installation Istructions"},
+  {usage: "Usage Information"},
+  {credits: "Credits and Acknowledgments"},
+  {license: "License Information"},
+  {contributing: "Constributing GUidelines"},
+  {tests:"Tests Instructions"},
+  {questions: "FAQ and contact"}
 ]
 
+
 function generateMarkdown(data) {
-  for(let prop of data) {
-    console.log(prop);
-    return `# ${data[0].title} 
-            ## ${data[1].description}
-            ## ${data[2].tableOfContents}
-            ## ${data[3].installation}
-            ## ${data[4].usage}
-            ## ${data[5].credits}
-            ## ${data[6].license}          
-            ## ${data[7].constributing}          
-            ## ${data[8].tests}          
-            ## ${data[9].questions}          
-          `;
-  }
+  let markdown = '';
+    function addSection(sectionTitle) {
+      markdown += `## ${sectionTitle}\n\n`;
+    }
+
+    function addSectionWithDescription(sectionTitle, sectionDescription) {
+      markdown += `## ${sectionTitle}\n\n${sectionDescription}\n\n`;
+    }
+
+    data.foreach(item  => {
+      const keys = Object.keys(item);
+      const sectionKeys = keys[0];
+      const sectionValue = item[sectionKeys];
+
+      switch (sectionKeys) {
+      case "title":
+        markdown += `# ${sectionValue}\n\n`;
+        break;
+      case "description":
+        addSectionWithDescription("Description", sectionValue);
+        break;
+      case "tableOfContents":
+        addSectionWithDescription("Table of Contents", sectionValue);
+        break;
+      case "installation":
+        addSectionWithDescription("Installation", sectionValue);
+        break;
+      case "usage":
+        addSectionWithDescription("Usage", sectionValue);
+        break;
+      case "credits":
+        addSectionWithDescription("Credits", sectionValue);
+        break;
+      case "license":
+        addSectionWithDescription("License", sectionValue);
+        break;
+      case "contributing":
+        addSectionWithDescription("Contributing", sectionValue);
+        break;
+      case "tests":
+        addSectionWithDescription("Tests", sectionValue);
+        break;
+      case "questions":
+        addSectionWithDescription("Questions", sectionValue);
+        break;
+      default:
+          "unrecognizable key";
+        break;
+      }
+    })
+    return markdown; 
 };
 
-// generateMarkdown(...data);
+console.log(generateMarkdown(data));   
+
 module.exports = generateMarkdown;
 
 
@@ -138,4 +189,4 @@ module.exports = generateMarkdown;
 
 // ## Tests
 
-// Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+// Go the extra mile and write tests for your application. Then provide examples on how to run them here
