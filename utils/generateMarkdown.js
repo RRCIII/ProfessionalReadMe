@@ -18,8 +18,8 @@ function renderLicenseBadge(license) {
  console.log(renderLicenseBadge(license))
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// // TODO: Create a function that returns the license link
+// // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license === "MIT") {
     return '(https://opensource.org/licenses/MIT)';
@@ -34,8 +34,8 @@ function renderLicenseLink(license) {
 console.log(renderLicenseLink(license));
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
 
 function renderLicenseSection(license) {
   if (license) {
@@ -51,28 +51,31 @@ ${renderLicenseBadge(license)}
 console.log(renderLicenseSection(license));
 
 // TODO: Create a function to generate markdown for README
-const data = [
-  {title: "Title"},
-  {description: "Description"},
-  {tableOfContents: "Table of Contents"},
-  {installation: "Installation Istructions"},
-  {usage: "Usage Information"},
-  {credits: "Credits and Acknowledgments"},
-  {license: "License Information"},
-  {contributing: "Constributing GUidelines"},
-  {tests:"Tests Instructions"},
-  {questions: "FAQ and contact"}
-]
+const data = [{
+  title: "Title",
+  description: "Description",
+  tableOfContents: "Table of Contents",
+  installation: "Installation Istructions",
+  usage: "Usage Information",
+  credits: "Credits and Acknowledgments",
+  license: "License Information",
+  contributing: "Constributing GUidelines",
+  tests:"Tests Instructions",
+  questions: "FAQ and contact"
+}];
 
 
 function generateMarkdown(data) {
   return `# ${data.title}
   
-  ##Description
+  ## Description
   ${data.description}
   
+
   ## Table of Constents
-  - [Description](#description)
+  ${data.tableOfContents}
+  
+- [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -105,30 +108,9 @@ ${data.questions}
   `;
 };
 
+console.log(generateMarkdown(data));   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// console.log(generateMarkdown(data));   
-
-// module.exports = generateMarkdown;
+module.exports = generateMarkdown;
 
 
 
