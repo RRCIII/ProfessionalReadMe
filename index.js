@@ -1,8 +1,7 @@
 // TODO: Include packages needed for this application
-const { default: Choices } = require('inquirer/lib/objects/choices.js');
+const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown.js');
 const inquirer = require('inquirer');
-
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -57,43 +56,30 @@ const questions = [
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // TODO: Create a function to write README file
-function writeToFile(README, data) {
-  fs.writeToFile('README.md', questions , (err) => {
-        err ? console.error(err) : console.log(data)
+function writeToFile(filename, data) {
+  fs.writeToFile('README.md', data , (err) => {
+        if(err) {
+        err ? console.error('Error writing ReadME',err) 
+        : console.log('README generated seccucessfully')
+        }
     })
 };
-console.log()
+console.log();
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+        const markdown = generateMarkdown(answers);
+        const filename = 'README.md';
+        writeToFile(filename, markdown);
+    })
+        .catch((error) => {
+            console.log("error occurred:", error);
+        })
+};
 
 // Function call to initialize app
 init();
