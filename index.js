@@ -32,12 +32,12 @@ const questions = [
 {
   type: 'input',
   name: 'installation',
-  meassage: 'What are the installation instructions required for your project:'
+  meassage: 'list any dependencies here:'
 },
 {
   type: 'input',
   name: 'usage',
-  meassage: 'Please enter the technologies :'
+  meassage: 'State the languages or technologies associated with this project:'
 },
 {
   type: 'input',
