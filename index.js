@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
+const path = require('path');
+const generateMarkdown = require('./utils/generateMarkdown');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -13,7 +15,7 @@ const questions = [
 {
   type: 'input',
   name: 'description',
-  meassage: 'Enter the the description of your project:'
+  meassage: 'Please describe the purpose and functionality of your project:'
 },
 {
   type: 'input',
@@ -37,31 +39,45 @@ const questions = [
   meassage: 'Enter Credits and Acknowledgments of your project:',
 },
 {
-  type: 'list',
+  type: 'checkbox',
   name: 'licence',
-  meassage: 'Enter the License Information of your project:',
+  meassage: 'Please enter a license applicable to your project:',
   Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'none']
 },
 {
   type: 'input',
   name: 'contributors',
-  meassage: ' of your project:'
+  meassage: 'Please list any contributors. (uUse GitHub usernames)',
+  default: ''
 },
 {
   type: 'input',
-  name: 'questions',
-  meassage: 'Enter the FAQ and contact of your project:'
+  name: 'email',
+  meassage: 'Please enter your email address:'
 },
+{ type: 'input',
+  name: 'creator',
+  message: 'Write your Github username:'
 
+},
+{ type: 'input',
+  name: 'name',
+  message: 'State your full name:'
+
+},
+{ type: 'input',
+  name: 'test',
+  message: 'Provide walkthrough of requires tests if applicable:' 
+},
 ];
-console.log(questions);
+
 
 // TODO: Create a function to write README file
-function writeToFile(_filename, data) { 
+function writeToFile(filename, data) { 
     
     fs.writeToFile('README.md', data , (err) => {
         err ? console.error('Error writing README', err) 
-        : console.log('README generated seccucessfully')
+        : console.log('README generated successfully')
         
     })
 };
