@@ -21,7 +21,7 @@ const questions = [
     type: 'checkbox',
     name: 'licence',
     meassage: 'Please enter a license applicable to your project:',
-    Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'none']
+    Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none']
 },
 {
   type: 'input',
