@@ -24,7 +24,7 @@ const questions = [
 {
   type: 'input',
   name: 'installation',
-  meassage: 'Enter the Installation Instructions of your project:'
+  meassage: 'What are the installation instructions required for your project:'
 },
 {
   type: 'input',
@@ -44,8 +44,8 @@ const questions = [
 },
 {
   type: 'input',
-  name: 'contributing',
-  meassage: 'Enter the Constributing Guidelines of your project:'
+  name: 'contributors',
+  meassage: ' of your project:'
 },
 {
   type: 'input',
@@ -72,8 +72,8 @@ function writeToFile(_filename, data) {
 function init() {
     inquirer
         .prompt(questions)
-        .then((answers) => {
-        const markdown = generateMarkdown(answers);
+        .then((responses) => {
+        const markdown = generateMarkdown(responses);
         const filename = 'README.md';
         writeToFile(filename, markdown);
     })
