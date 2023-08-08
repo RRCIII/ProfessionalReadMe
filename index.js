@@ -82,14 +82,13 @@ function writeToFile(filename, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .prompt(questions)
-        .then((responses) => {
-            console.log("Creating Professional README.md File...");
-            writeToFile('README.md', generateMarkdown({...responses}));
+    .prompt(questions)
+    .then((responses) => {
+        console.log("Creating Professional README.md File...");
+        writeToFile('README.md', generateMarkdown({...responses}));
+    }).catch((error) => {
+        console.log("error occurred:", error);
     })
-        .catch((error) => {
-            console.log("error occurred:", error);
-        })
 };
 
 // Function call to initialize app
