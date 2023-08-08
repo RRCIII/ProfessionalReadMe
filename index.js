@@ -74,12 +74,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(filename, data) { 
-    
-    fs.writeToFile('README.md', data , (err) => {
-        err ? console.error('Error writing README', err) 
-        : console.log('README generated successfully')
-        
-    })
+    return fs.writeFileSync(path.join(process.cwd(), filename), data);
 };
 
 
@@ -89,9 +84,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((responses) => {
-        const markdown = generateMarkdown(responses);
-        const filename = 'README.md';
-        writeToFile(filename, markdown);
+      
     })
         .catch((error) => {
             console.log("error occurred:", error);
