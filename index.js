@@ -25,12 +25,6 @@ const questions = [
 },
 {
   type: 'input',
-  name: 'table of contents',
-  meassage: 'Enter the Table of Contents of you project:',
-  Choices: 'none'
-},
-{
-  type: 'input',
   name: 'installation',
   meassage: 'list any dependencies here:'
 },
@@ -53,7 +47,7 @@ const questions = [
 {
   type: 'input',
   name: 'email',
-  meassage: 'Please enter your email address:'
+  meassage: 'Provide valid email address:'
 },
 { type: 'input',
   name: 'creator',
