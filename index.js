@@ -10,44 +10,44 @@ const questions = [
 {
   type: 'input',
   name: 'title',
-  meassage: 'Please enter your project name:'
+  message: 'Please enter your project name:'
 },
 {
   type: 'input',
   name: 'description',
-  meassage: 'Please describe the purpose and functionality of your project:'
+  message: 'Please describe the purpose and functionality of your project:'
 },
 {
-    type: 'checkbox',
-    name: 'licence',
-    meassage: 'Please enter a license applicable to your project:',
-    Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none']
+  type: 'checkbox',
+  name: 'license',
+  message: 'Please enter a license applicable to your project:',
+  Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none']
 },
 {
   type: 'input',
   name: 'installation',
-  meassage: 'list any dependencies here:'
+  message: 'list any dependencies here:'
 },
 {
   type: 'input',
   name: 'usage',
-  meassage: 'State the languages or technologies associated with this project:'
+  message: 'State the languages or technologies associated with this project:'
 },
 {
   type: 'input',
   name: 'credits',
-  meassage: 'Enter Credits and Acknowledgments of your project:',
+  message: 'Enter Credits and Acknowledgments of your project:',
 },
 {
   type: 'input',
   name: 'contributors',
-  meassage: 'Please list any contributors. (Use GitHub usernames)',
+  message: 'Please list any contributors. (Use GitHub usernames)',
   default: ''
 },
 {
   type: 'input',
   name: 'email',
-  meassage: 'Provide valid email address:'
+  message: 'Provide valid email address:'
 },
 { type: 'input',
   name: 'creator',

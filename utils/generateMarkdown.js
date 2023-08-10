@@ -78,6 +78,6 @@ ${renderLicenseSection(license)}
   `;
 };
 
-generateMarkdown(data);   
+generateMarkdown();   
 
 module.exports = generateMarkdown;
