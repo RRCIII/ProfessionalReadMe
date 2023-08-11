@@ -47,7 +47,7 @@ function generateMarkdown(data) {
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -74,10 +74,10 @@ Github - [${data.creator}] (https://github.com/${data.creator}/)
 ## Tests
 ## ${data.tests}
 
-${renderLicenseSection(license)}
+${renderLicenseSection(data.license)}
   `;
 };
 
-generateMarkdown();   
+
 
 module.exports = generateMarkdown;

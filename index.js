@@ -10,28 +10,28 @@ const questions = [
 {
   type: 'input',
   name: 'title',
-  message: 'Please enter your project name:'
+  message: 'Please enter your project name:',
 },
 {
   type: 'input',
   name: 'description',
-  message: 'Please describe the purpose and functionality of your project:'
+  message: 'Please describe the purpose and functionality of your project:',
 },
 {
   type: 'checkbox',
   name: 'license',
   message: 'Please enter a license applicable to your project:',
-  Choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none']
+  choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none'],
 },
 {
   type: 'input',
   name: 'installation',
-  message: 'list any dependencies here:'
+  message: 'list any dependencies here:',
 },
 {
   type: 'input',
   name: 'usage',
-  message: 'State the languages or technologies associated with this project:'
+  message: 'State the languages or technologies associated with this project:',
 },
 {
   type: 'input',
@@ -42,26 +42,26 @@ const questions = [
   type: 'input',
   name: 'contributors',
   message: 'Please list any contributors. (Use GitHub usernames)',
-  default: ''
+  default: '',
 },
 {
   type: 'input',
   name: 'email',
-  message: 'Provide valid email address:'
+  message: 'Provide valid email address:',
 },
 { type: 'input',
   name: 'creator',
-  message: 'Write your Github username:'
+  message: 'Write your Github username:',
 
 },
 { type: 'input',
   name: 'name',
-  message: 'State your full name:'
+  message: 'State your full name:',
 
 },
 { type: 'input',
   name: 'tests',
-  message: 'Provide walkthrough of requires tests if applicable:' 
+  message: 'Provide walkthrough of requires tests if applicable:',
 },
 ];
 
