@@ -79,7 +79,7 @@ function init() {
     .prompt(questions)
     .then((responses) => {
         console.log("Creating Professional README.md File...");
-        writeToFile('README.md', generateMarkdown({...responses}));
+        writeToFile('./dist/README.md', generateMarkdown({...responses}));
     }).catch((error) => {
         console.log("error occurred:", error);
     })
