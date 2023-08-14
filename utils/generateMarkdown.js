@@ -41,7 +41,7 @@ function generateMarkdown(data) {
   ## Description
   ## ${data.description}
   
-  ##Table of Contents
+  Table of Contents
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
@@ -63,13 +63,12 @@ ${renderLicenseLink(data.license)}
 ## ${data.license}
 
 ## Questions
-## ${data.questions}
-Name - ${data.name}
-Email - ${data.email}
-Github - [${data.creator}] (https://github.com/${data.creator}/)
+Name : /n${data.name}n/
+Email : /n${data.email}n/
+Github : /n[${data.creator}] (https://github.com/${data.creator}/)n/
 
 ## Contributors
-## ${data.contributing}
+## ${data.contributors}
 
 ## Tests
 ## ${data.tests}
