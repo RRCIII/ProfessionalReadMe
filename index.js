@@ -1,91 +1,118 @@
 // TODO: Include packages needed for this application
-const fs = require('fs');
 const inquirer = require('inquirer');
-const path = require('path');
+const { writeFile } = require('fs').promises;
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-// TODO: Create an array of questions for user input
-const questions = [
-{
-  type: 'input',
-  name: 'title',
-  message: 'Please enter your project name:',
-},
-{
-  type: 'input',
-  name: 'description',
-  message: 'Please describe the purpose and functionality of your project:',
-},
-{
-  type: 'checkbox',
-  name: 'license',
-  message: 'Please enter a license applicable to your project:',
-  choices: ['MIT', 'Apache 2.0', "GPU GPL v3", 'Boost1.0', 'MPL2.0', 'BSD2','BSD3','none'],
-},
-{
-  type: 'input',
-  name: 'installation',
-  message: 'list any dependencies here:',
-},
-{
-  type: 'input',
-  name: 'usage',
-  message: 'State the languages or technologies associated with this project:',
-},
-{
-  type: 'input',
-  name: 'credits',
-  message: 'Enter Credits and Acknowledgments of your project:',
-},
-{
-  type: 'input',
-  name: 'contributors',
-  message: 'Please list any contributors. (Use GitHub usernames)',
-  default: '',
-},
-{
-  type: 'input',
-  name: 'email',
-  message: 'Provide valid email address:',
-},
-{ type: 'input',
-  name: 'creator',
-  message: 'Write your Github username:',
-
-},
-{ type: 'input',
-  name: 'name',
-  message: 'State your full name:',
-
-},
-{ type: 'input',
-  name: 'tests',
-  message: 'Provide walkthrough of requires tests if applicable:',
-},
-];
-
-
-// TODO: Create a function to write README file
-function writeToFile(filename, data) { 
-    return fs.writeFileSync(path.join(process.cwd(), filename), data);
+// Asynchronous function to writeFile to the dist folder
+const writeTODist = async (content) => {
+  try {
+    await writeFile('./dist/README.md', content);
+  } catch (error) {
+      console.log(error)
+    }
 };
 
+//prompt inquirer.js in CLI
+const promptInquirer  = async () => {
+  console.log("Generate a README.md file. Input the following:");
 
+  try {
+    const data = await inquirer.prompt([
+      {
+        type: "input",
+        name: "username",
+        message: "Your Github username:",
+        validate: (username) => {
+          return username 
+          ? true 
+          : console.log("Please enter your Github username", false);
+        },
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Your email address:",
+        validate: (email) => {
+          return email 
+          ? true 
+          : console.log("Please enter your Email address", false);
+        },
+      },
+      {
+        type: "input",
+        name: "title",
+        message: "Title of your repositiory:",
+        validate: (title) => {
+          return title 
+          ? true 
+          : console.log("Please enter you project title", false);
+        },
+      },
+      {
+        type: "input",
+        name: "description",
+        message: "Description. Explain the purpose of the project:",
+        validate: (des) => {
+          return des 
+          ? true 
+          : console.log("Please describe your project", false);
+        },
+      },
+      {
+        type: "confirm",
+        name: "installConfirm",
+        message: "Does your project require any additonal installation?",
+        default: false 
+      },
+      {
+        type: "input",
+        name: "install",
+        message: "Define the additional insatallatio ns required:",
+        when: ({ installConfirm }) => {
+          return installConfirm ? true : false;
+        },
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: "Usage. How to use this repository:",
+      },
+      {
+        type: "input",
+        name: "contribute",
+        message: "Contribution. How to contribute to this repository:",
+      },
+      {
+        type: "input",
+        name: "test",
+        message: "Testing. Instructions on how to test:",
+      },
+      {
+        type: "list",
+        name: "license",
+        message: "Choose one of the following licenses:",
+        choices: ["MIT", "Apache", "GNU GPL v3"],
+        validate: (license) => {
+          return license
+          ? true 
+          : (console.log("Please choose a license"), false);
+        },
+      },
+    ]);
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer
-    .prompt(questions)
-    .then((responses) => {
-        console.log("Creating Professional README.md File...");
-        writeToFile('./dist/README.md', generateMarkdown({...responses}));
-    }).catch((error) => {
-        console.log("error occurred:", error);
-    })
+  console.log(data);
+
+  // Generate README.md file with the object returned "data"
+  const readmeGenerated = generateMarkdown(data);
+  writeTODist(readmeGenerated);
+
+  console.log("README.md generated in dist folder!");
+
+  } catch (error) { 
+    console.log(error);
+  }
 };
 
-// Function call to initialize app
-init();
-  
+promptInquirer();
 
