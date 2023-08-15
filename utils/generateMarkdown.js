@@ -1,8 +1,8 @@
-const confirm = require('./confirm');
+const confirm = require("./confirm");
 
 //generate README.md file w/ JS
 const generateMarkdown = (data) => {
-  return (`# ${data.title} •  ${condtion.createBadge(data.license)};
+  return `# ${data.title} •  ${condtion.createBadge(data.license)};
   
   
 ## Description
@@ -29,12 +29,11 @@ ${confrim.createInstall(data.test)}
 This application is covered under the ${data.license}
 
 ## Questions
-Check out my Github page: [${data.username}](https://www.github.com/${data.username})
+Check out my Github page: [${data.username}](https://www.github.com/${
+    data.username
+  })
 
 Conact me at: [${data.email}](mailto:${data.email})`;
-  )
 };
-
-
 
 module.exports = generateMarkdown;
