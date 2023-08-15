@@ -59,13 +59,13 @@ ${renderLicenseLink(data.license)}
 ## ${data.usage}
 ## Credits
 ## ${data.credits}
-
+##License
 ## ${data.license}
 
 ## Questions
-Name : /n${data.name}n/
-Email : /n${data.email}n/
-Github : /n[${data.creator}] (https://github.com/${data.creator}/)n/
+Name : ${data.name}
+Email : ${data.email}
+Github : [${data.creator}] (https://github.com/${data.creator}/)
 
 ## Contributors
 ## ${data.contributors}

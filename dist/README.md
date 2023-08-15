@@ -1,11 +1,11 @@
 # Professional README
   by Ricky Carter
-  ![Github license](https://img.shields.io/badge/license-MIT-yellow.svg);
+  ![Github license](https://img.shields.io/badge/license-Apache 2.0-yellow.svg);
   
   ## Description
   ## This application was created to conveniently generate a README.md file while producing questions for user input via NODEJS and npm packages.
   
-  ##Table of Contents
+  Table of Contents
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
@@ -26,20 +26,19 @@
 ## Credits
 ## n/a
 
-## MIT
+## Apache 2.0
 
 ## Questions
-## undefined
-Name - Ricky Carter
-Email - Randolphcarter5@gmail.com
-Github - [RRCIII] (https://github.com/RRCIII/)
+Name : /nRicky Cartern/
+Email : /nRandolphcarter5@gmail.comn/
+Github : /n[ RRCIII] (https://github.com/ RRCIII/)n/
 
 ## Contributors
-## undefined
+## n/a
 
 ## Tests
 ## npm test
 
 ## License 
-            This Project is licensed under the MIT license
+            This Project is licensed under the Apache 2.0 license
   
