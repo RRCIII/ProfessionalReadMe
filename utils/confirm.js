@@ -67,7 +67,7 @@ const confirmContribute = (constribute) => {
 };
 const confirmTesting = (test) => {
   if (test) {
-    ("* [Testing](#testing)");
+    return ("* [Testing](#testing)");
   } else {
     return "";
   }
