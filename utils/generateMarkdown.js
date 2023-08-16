@@ -7,14 +7,14 @@ const generateMarkdown = (data) => {
   
 ## Description
 ${data.description}
-  
-## Table of Contents
+   
+# Table of Contents
 ${confirm.confirmInstall(data.install)}
 ${confirm.confirmUsage(data.usage)}
 ${confirm.confirmContribute(data.constribute)}
 ${confirm.confirmTesting(data.test)}
-n\*[License](#license)
-n\*[Questions](#questions)
+-[License](#license)
+-[Questions](#questions)
 
 
 ${confirm.createInstall(data.install)}
