@@ -1,28 +1,32 @@
 // Conditional statements to render Installation, Usage, Contributions, and Testing. If true create header
 const createInstall = (install) => {
   if (install) {
-    `##Installation ${install}`;
+   return `##Installation 
+    ${install}`;
   } else {
     return "";
   }
 };
 const createUsage = (usage) => {
   if (usage) {
-    `## Usage ${usage}`;
+    `## Usage 
+    ${usage}`;
   } else {
     return "";
   }
 };
 const createContribute = (constribute) => {
   if (constribute) {
-    `##Constribute ${constribute}`;
+    return `##Constribute 
+    ${constribute}`;
   } else {
     return "";
   }
 };
 const createTesting = (test) => {
   if (test) {
-    `##Testing ${test}`;
+    return `##Testing 
+    ${test}`;
   } else {
     return "";
   }
@@ -42,21 +46,21 @@ const createBadge = (license) => {
 // confirm and create tabs for table of contents if each item has an input
 const confirmInstall = (install) => {
   if (install) {
-    ("* [Installation](#installation)");
+    return ("* [Installation](#installation)");
   } else {
     return "";
   }
 };
 const confirmUsage = (usage) => {
   if (usage) {
-    ("* [Usage](#usage)");
+    return ("* [Usage](#usage)");
   } else {
     return "";
   }
 };
 const confirmContribute = (constribute) => {
   if (constribute) {
-    ("* [Contributions](#contributions)");
+    return ("* [Contributions](#contributions)");
   } else {
     return "";
   }
