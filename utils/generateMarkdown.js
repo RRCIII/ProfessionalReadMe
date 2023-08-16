@@ -2,7 +2,7 @@ const confirm = require("./confirm");
 
 //generate README.md file w/ JS
 const generateMarkdown = (data) => {
-  return (`# ${data.title} ${confirm.createBadge(data.license)};
+  return (`# ${data.title} • ${confirm.createBadge(data.license)}
   
   
 ## Description
@@ -17,9 +17,9 @@ ${confirm.confirmTesting(data.test)}
 *[Questions](#questions)
 
 
-${confirm.createInstall(data.Install)}
+${confirm.createInstall(data.install)}
 
-${confirm.createUsage(data.Usage)}
+${confirm.createUsage(data.usage)}
 
 ${confirm.createContribute(data.contribute)}
 
@@ -29,11 +29,10 @@ ${confirm.createTesting(data.test)}
 This application is covered under the ${data.license}
 
 ## Questions
-Check out my Github page: [${data.username}](https://www.github.com/${
-    data.username
-  })
 
-Conact me at: [${data.email}](mailto:${data.email})`
+Check out my Github page: [${data.username}](https://www.github.com/${data.username})
+
+Conact Me at: [${data.email}](mailto:${data.email})`
   )
 };
 
