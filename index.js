@@ -68,7 +68,7 @@ const promptInquirer  = async () => {
       {
         type: "input",
         name: "install",
-        message: "Define the additional insatallations required:",
+        message: "Define the additional installations required:",
         when: ({ installConfirm }) => {
           return installConfirm ? true : false;
         },
@@ -107,7 +107,7 @@ const promptInquirer  = async () => {
   const readmeGenerated = generateMarkdown(data);
   writeTODist(readmeGenerated);
 
-  console.log("README.md generated in dist folder!");
+  console.log("README.md generated in dist folder! Check it out!");
 
   } catch (error) { 
     console.log(error);
