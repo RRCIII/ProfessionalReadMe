@@ -13,8 +13,8 @@ ${confirm.confirmInstall(data.install)}
 ${confirm.confirmUsage(data.usage)}
 ${confirm.confirmContribute(data.constribute)}
 ${confirm.confirmTesting(data.test)}
-*[License](#license)
-*[Questions](#questions)
+n\*[License](#license)
+n\*[Questions](#questions)
 
 
 ${confirm.createInstall(data.install)}
