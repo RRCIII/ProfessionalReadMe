@@ -9,16 +9,16 @@ const createInstall = (install) => {
 };
 const createUsage = (usage) => {
   if (usage) {
-    `## Usage 
+   return `## Usage 
     ${usage}`;
   } else {
     return "";
   }
 };
-const createContribute = (constribute) => {
-  if (constribute) {
-    return `##Constribute 
-    ${constribute}`;
+const createContribute = (contribute) => {
+  if (contribute) {
+    return `##Contribute 
+    ${contribute}`;
   } else {
     return "";
   }
@@ -46,28 +46,28 @@ const createBadge = (license) => {
 // confirm and create tabs for table of contents if each item has an input
 const confirmInstall = (install) => {
   if (install) {
-    return ("* [Installation](#installation)");
+    return ("\n* [Installation](#installation)");
   } else {
     return "";
   }
 };
 const confirmUsage = (usage) => {
   if (usage) {
-    return ("* [Usage](#usage)");
+    return ("\n* [Usage](#usage)");
   } else {
     return "";
   }
 };
 const confirmContribute = (constribute) => {
   if (constribute) {
-    return ("* [Contributions](#contributions)");
+    return ("\n* [Contributions](#contributions)");
   } else {
     return "";
   }
 };
 const confirmTesting = (test) => {
   if (test) {
-    return ("* [Testing](#testing)");
+    return ("\n* [Testing](#testing)");
   } else {
     return "";
   }
