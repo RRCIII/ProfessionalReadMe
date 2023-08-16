@@ -68,7 +68,7 @@ const promptInquirer  = async () => {
       {
         type: "input",
         name: "install",
-        message: "Define the additional insatallatio ns required:",
+        message: "Define the additional insatallations required:",
         when: ({ installConfirm }) => {
           return installConfirm ? true : false;
         },

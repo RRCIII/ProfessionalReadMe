@@ -2,28 +2,28 @@ const confirm = require("./confirm");
 
 //generate README.md file w/ JS
 const generateMarkdown = (data) => {
-  return `# ${data.title} •  ${condtion.createBadge(data.license)};
+  return (`# ${data.title} ${confirm.createBadge(data.license)};
   
   
 ## Description
 ${data.description}
   
 ## Table of Contents
-${confirm.confirmstall(date.install)}
-${confirm.confirmUsage(date.usage)}
-${confirm.confirmContribute(date.constribute)}
-${confirm.confirmTesting(date.test)}
+${confirm.confirmInstall(data.install)}
+${confirm.confirmUsage(data.usage)}
+${confirm.confirmContribute(data.constribute)}
+${confirm.confirmTesting(data.test)}
 *[License](#license)
 *[Questions](#questions)
 
 
-${confrim.createInstall(data.Install)}
+${confirm.createInstall(data.Install)}
 
-${confrim.createInstall(data.Usage)}
+${confirm.createUsage(data.Usage)}
 
-${confrim.createInstall(data.contribute)}
+${confirm.createContribute(data.contribute)}
 
-${confrim.createInstall(data.test)}
+${confirm.createTesting(data.test)}
 
 ## License
 This application is covered under the ${data.license}
@@ -33,7 +33,8 @@ Check out my Github page: [${data.username}](https://www.github.com/${
     data.username
   })
 
-Conact me at: [${data.email}](mailto:${data.email})`;
+Conact me at: [${data.email}](mailto:${data.email})`
+  )
 };
 
 module.exports = generateMarkdown;
