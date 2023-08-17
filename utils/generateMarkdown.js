@@ -44,7 +44,7 @@ ${data.description}
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#tests)
+- [Tests](#test)
 - [Questions](#questions)
 ## Installation
 ${data.installation}
@@ -52,7 +52,7 @@ ${data.installation}
 ${data.usage}
 ## Contributing
 ${data.contribution}
-## Contact Me
+## Questions
 * Name - ${data.name}
 * Email - [${data.email}](mailto:${data.email})
 * Github - [${data.username}](https://github.com/${data.username}/)
