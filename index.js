@@ -39,7 +39,7 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "How do you install your project?:",
+    message: "What installation(s) were required to run your project?:",
     validate: (installation) => {
       if (installation) {
         return true;

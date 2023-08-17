@@ -12,11 +12,11 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== "none") {
     if (license === "MIT") {
-      return `![MIT License](https://opensource.org/licence/MIT)`;
+      return `[MIT License](https://opensource.org/licence/MIT)`;
     } else if (license === "Apache 2.0") {
-      return `![Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)`;
+      return `[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)`;
     } else if (license === "GNU") {
-      return `![GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
+      return `[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
     } 
   }
   return "";

@@ -1,7 +1,7 @@
-# asfasf ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+# Professional README ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description 
-sdfsdfsdfaf
+This project generates Professional README.md 
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -11,16 +11,16 @@ sdfsdfsdfaf
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-asdgdsgsdfgdfgs
+inquirer 8.2.4
 ## Usage
-sdgfgsg
+markdown, javascript, node.js
 ## Contributing
-sdfgsdg
+Express yourself
 ## Contact Me
-* Name - sdgsdfgsg
-* Email - [sdfgdfsg](mailto:sdfgdfsg)
-* Github - [sgfdg](https://github.com/sgfdg/)
+* Name - Ricky Carter
+* Email - [Icantgetnosatisfaction@hotmail.com](mailto:Icantgetnosatisfaction@hotmail.com)
+* Github - [RRCIII](https://github.com/RRCIII/)
 ## Testing
-sdfgsfdgg
+From the "land down undah"
 ## License
     This project is licensed under the MIT license
