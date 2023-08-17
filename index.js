@@ -1,6 +1,7 @@
 //declaring Global packages require's
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path")
 const generateMarkdown = require("./utils/generateMarkdown");
 console.log("Welcome to your README generator");
 console.log(
@@ -103,13 +104,26 @@ const questions = [
   },
   {
     type: "input",
-    name: "github",
+    name: "username",
     message: "What is your github username?:",
-    validate: (github) => {
-      if (github) {
+    validate: (username) => {
+      if (username) {
         return true;
       } else {
         console.log("Please enter your github user");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "name",
+    message: "What is your name?:",
+    validate: (name) => {
+      if (name) {
+        return true;
+      } else {
+        console.log("everyone has a name, just put anything at this point");
         return false;
       }
     },
@@ -129,24 +143,20 @@ const questions = [
   },
 ];
 
-//function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(filename, data, (err)=> {
-    if (err) {
-      return console.log(err)
-    }
-  });
-  console.log("Successs! Checkout your README file");
-}
-
 //function to initialize app
 function init() {
-  inquirer.prompt(questions)
-  .then(function (userInput) {
-    console.log(userInput)
-    writeToFile("./dist/README.md", generateMarkdown(userInput))
+  inquirer.prompt(questions).then((responses) => {
+    console.log("Creating Professional README.md file...")
+    writeToFile("./dist/README.md", generateMarkdown({...responses}))
   })
 };
 
+
+//function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err)=> {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+  });
+}
 //call fxn to initialize app
 init();
