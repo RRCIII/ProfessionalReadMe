@@ -6,7 +6,7 @@ This is a Node.js application that generates a professional README.md file from 
 
 ## Video Demonstration of Application
 
-- [Click Here](https://github.com/)
+- [Click Here](https://drive.google.com/file/d/1Bx7OQ4-rNk0niYQjMyf0iz8qC9wcJDLD/view?usp=drive_link)
 
 ## Installation
 
@@ -43,7 +43,3 @@ node index.js
 ## Credits
 
 - UNC bootcamp collegues, Youtube, and chatGPT
-
-## License
-
-This application is covered under the [MIT License](./LICENSE).
