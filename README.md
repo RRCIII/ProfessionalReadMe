@@ -18,7 +18,7 @@ This is a Node.js application that generates a professional README.md file from 
 
 - #### Clone the repository
 
-<img width="400px" height="300px" src="./utils/Screenshots/repoScreenshot/ .png" /><br/>
+<img width="400px" height="300px" src="./utils/Screenshots/PROFESSIONAL_README.md_gitClone.png" /><br/>
 
 - #### Open up a terminal and change directories into the repo. Type in:
 
@@ -34,11 +34,11 @@ node index.js
 
 - #### Input the following information to create a professional README.md
 
-<img width="650px" src="./utils/screenshots/Screenshot 2023-08-03 at 3.55.20 AM.png" /><br/>
+<img width="650px" src="./utils/Screenshots/PROFESSIONAL_README.md_prompt.png" /><br/>
 
 - #### README.md file will be built into the dist folder upon completion
 
-<img width="230px" src="./utils/screenshots/Screenshot 2023-08-03 at 4.01.52 AM.png" />
+<img width="230px" src="./utils/Screenshots/PROFESSIONAL_README.md_dist.png" />
 
 ## Credits
 
