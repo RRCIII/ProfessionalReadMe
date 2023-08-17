@@ -56,7 +56,7 @@ ${data.contribution}
 * Name - ${data.name}
 * Email - [${data.email}](mailto:${data.email})
 * Github - [${data.username}](https://github.com/${data.username}/)
-## Testing
+## Tests
 ${data.test}
 ${renderLicenseSection(data.license)}
 `;
